@@ -15,7 +15,7 @@ export default async function place({ id }) {
           "content-type": "application/x-www-form-urlencoded;charset=UTF-8",
           origin: "https://www.google.com",
         },
-        body: `f.req=%5B%5B%5B%22MJuoKd%22%2C%22%5B%5C%22%2Fm%2F${id}%5C%22%2Cnull%2C%5C%22ut%5C%22%2C%5Bnull%2C%5B%5D%5D%2C%5C%22%5C%22%2C0%2C%5C%22%2Ftravel%2Fthings-to-do%3Fdest_src%3Dut%26tcfs%3DEhMKCS9tLzBkNXQwdhIGQm9scHVy%26dest_mid%3D%252Fm%252F${id}%26client%3Dms-android-vivo%5C%22%2Cnull%2Cnull%2C%5C%22%5C%22%5D%22%2Cnull%2C%221%22%5D%2C%5B%22WR9Xq%22%2C%22%5Bnull%2C%5B%5C%22%2Fm%2F${id}%5C%22%5D%5D%22%2Cnull%2C%222%22%5D%5D%5D&at=thingtodo&`,
+        body: `f.req=%5B%5B%5B%22MJuoKd%22%2C%22%5B%5C%22%2Fm%2F${id}%5C%22%2Cnull%2C%5C%22ut%5C%22%2C%5Bnull%2C%5B%5D%5D%2C%5C%22%5C%22%2C0%2C%5C%22%2Ftravel%2Fthings-to-do%3Fdest_src%3Dut%26tcfs%3Dthingstodo%26dest_mid%3D%252Fm%252F${id}%26client%3Dms-android-vivo%5C%22%2Cnull%2Cnull%2C%5C%22%5C%22%5D%22%2Cnull%2C%221%22%5D%2C%5B%22WR9Xq%22%2C%22%5Bnull%2C%5B%5C%22%2Fm%2F${id}%5C%22%5D%5D%22%2Cnull%2C%222%22%5D%5D%5D&at=thingtodo`,
       }
     ).then((response) => response.text());
 
