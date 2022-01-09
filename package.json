@@ -5,7 +5,8 @@
   "description": "Things to do api",
   "main": "index.js",
   "scripts": {
-    "dev": "wrangler dev"
+    "dev": "wrangler dev",
+    "publish": "wrangler publish"
   },
   "author": "tuhinpal <me@thetuhin.com>",
   "license": "MIT"
