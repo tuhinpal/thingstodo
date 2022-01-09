@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "name": "thingstodo",
+  "version": "1.0.0",
+  "description": "Things to do api",
+  "main": "index.js",
+  "scripts": {
+    "dev": "wrangler dev"
+  },
+  "author": "tuhinpal <me@thetuhin.com>",
+  "license": "MIT"
+}
