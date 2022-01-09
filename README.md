@@ -1,6 +1,6 @@
 # Things to do
 
-Get things to do of a place. Powered by Google's Things to do and Cloudflare worker. NOTE: This project doesn't use google's API.
+Get things to do on a place. Powered by Google's Things to do and Cloudflare worker. NOTE: This project doesn't use google's API.
 
 ### Endpoints:
 

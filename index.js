@@ -1,4 +1,4 @@
-import { getplaceCache } from "./lib/cache";
+import { getplaceCache, purgeCache } from "./lib/cache";
 import jsonResponse from "./lib/jsonResponse";
 import place from "./src/place";
 import serach from "./src/serach";
@@ -41,6 +41,15 @@ async function handleRequest(request) {
           id: path.split("/")[2],
         });
       }
+
+    case `/purge/${SECRET}`: // set SECRET in environment variables at cf dashboard
+      var deleted = await purgeCache();
+      return jsonResponse({
+        data: {
+          message: "Cache purged!",
+          deleted,
+        },
+      });
 
     default:
       return jsonResponse({
