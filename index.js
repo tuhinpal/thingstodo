@@ -15,6 +15,10 @@ async function handleRequest(request) {
       return jsonResponse({
         data: {
           message: "Working!",
+          serach: "/serach?query={query}",
+          serach: "/place/{id}",
+          madeBy: "tuhinpal <me@thetuhin.com>",
+          github: "https://github.com/tuhinpal/thingstodo",
         },
       });
 
