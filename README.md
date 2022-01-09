@@ -109,7 +109,7 @@ Credits go to [Google](https://google.com) for organizing the data and [Clouflar
 
 ### License & Copyright :
 
-- This Project is [Apache-2.0](https://github.com/tuhinpal/thingstodo/blob/main/LICENSE) Licensed
+- This Project is [Apache-2.0](https://github.com/tuhinpal/thingstodo/blob/master/LICENSE) Licensed
 - Copyright 2022 by [Tuhin Kanti Pal](https://github.com/tuhinpal)
 
 <br><a href="https://www.buymeacoffee.com/tuhinkpal"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=tuhinkpal&button_colour=5F7FFF&font_colour=ffffff&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00"></a>
