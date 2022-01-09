@@ -64,11 +64,7 @@ URL: https://<your-app>.workers.dev/place/{id}
             "name": "Victoria Memorial",
             "description": "Grand museum for art & Indian history",
             "images": {
-                "default": "https://encrypted-tbn0.gstatic.com/images?q",
-                "1920x1080": "https://encrypted-tbn0.gstatic.com/images?q=w1920-h1080-k-no",
-                "1280x720": "https://encrypted-tbn0.gstatic.com/images?q=w1280-h720-k-no",
-                "640x360": "https://encrypted-tbn0.gstatic.com/images?q=w640-h360-k-no",
-                "180x120": "https://encrypted-tbn0.gstatic.com/images?q=w180-h120-k-no"
+                "default": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP1roLFmJHrgxQvIiDN3gVqKSbGrWr8eL3aXpa5SxYby0h_ZWN7-8dBVeYdWNytoCYqGnq5NuTFfxFPg"
             },
             "coordinates": {
                 "lat": 22.5448082,
