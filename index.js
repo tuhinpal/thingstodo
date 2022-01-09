@@ -16,7 +16,7 @@ async function handleRequest(request) {
         data: {
           message: "Working!",
           serach: "/serach?query={query}",
-          serach: "/place/{id}",
+          place: "/place/{id}",
           madeBy: "tuhinpal <me@thetuhin.com>",
           github: "https://github.com/tuhinpal/thingstodo",
         },

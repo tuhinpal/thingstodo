@@ -1,7 +1,7 @@
 name = "thingstodo"
 type = "webpack"
 
-account_id = ""
+account_id = "b0de98c084260e91eefc4a79e2880d17"
 workers_dev = true
 route = ""
 zone_id = ""
