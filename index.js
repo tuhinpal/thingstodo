@@ -1,7 +1,7 @@
 import { getplaceCache, purgeCache } from "./lib/cache";
 import jsonResponse from "./lib/jsonResponse";
 import place from "./src/place";
-import serach from "./src/serach";
+import search from "./src/search";
 
 addEventListener("fetch", (event) => {
   event.respondWith(handleRequest(event.request));
@@ -15,7 +15,7 @@ async function handleRequest(request) {
       return jsonResponse({
         data: {
           message: "Working!",
-          serach: "/serach?query={query}",
+          search: "/search?query={query}",
           place: "/place/{id}",
           madeBy: "tuhinpal <me@thetuhin.com>",
           github: "https://github.com/tuhinpal/thingstodo",
@@ -23,7 +23,7 @@ async function handleRequest(request) {
       });
 
     case "/search":
-      return serach({
+      return search({
         query: new URL(request.url).searchParams.get("query"),
       });
 

@@ -10,7 +10,7 @@ Get things to do on a place. Powered by Google's Things to do and Cloudflare wor
 
 ```
 Method: GET
-URL: https://<your-app>.workers.dev/serach?query={query}
+URL: https://<your-app>.workers.dev/search?query={query}
 ```
 
 - Response:

@@ -1,6 +1,6 @@
 import jsonResponse from "../lib/jsonResponse";
 
-export default async function serach({ query }) {
+export default async function search({ query }) {
   try {
     const response = await fetch(
       "https://www.google.com/_/TravelFrontendUi/data/batchexecute",
@@ -24,7 +24,7 @@ export default async function serach({ query }) {
     var processedData = [],
       errors = [];
 
-    if (!data) throw new Error("No result found!");
+    if (!data) data = []; // so it won't break and return an empty array
 
     data.forEach((item) => {
       try {
@@ -69,7 +69,7 @@ export default async function serach({ query }) {
       data: {
         message: error.message || error.toString(),
       },
-      status: error.toString().includes("No result found") ? 404 : 500, // I know I can take better approach
+      status: 500, // I know I can take better approach
     });
   }
 }
