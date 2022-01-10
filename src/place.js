@@ -74,7 +74,7 @@ export default async function place({ id }) {
       error: {
         message:
           errors.length > 0
-            ? "Errors while processing things to do. Please report this to https://thetuhin.com/contact."
+            ? "Some errors while processing things to do. Please report this to https://thetuhin.com/contact."
             : "No errors",
         data: errors,
       },
@@ -93,7 +93,9 @@ export default async function place({ id }) {
   } catch (error) {
     return jsonResponse({
       data: {
-        message: error.message || error.toString(),
+        message: `Something went wrong, Maybe ID is invalid => ${
+          error.message || error.toString()
+        }`,
       },
       status: 500,
     });

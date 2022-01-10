@@ -28,12 +28,15 @@ export default async function serach({ query }) {
       try {
         item = item[0];
         let id = item[4].split("/").pop();
-        processedData.push({
-          id,
-          name: item[1],
-          description: item[3],
-          api_path: `/place/${id}`,
-        });
+
+        if (!id.includes("_")) {
+          processedData.push({
+            id,
+            name: item[1],
+            description: item[3],
+            api_path: `/place/${id}`,
+          });
+        }
       } catch (error) {
         try {
           errors.push({
@@ -53,7 +56,7 @@ export default async function serach({ query }) {
         error: {
           message:
             errors.length > 0
-              ? "Errors while searching places. Please report this to https://thetuhin.com/contact."
+              ? "Some errors while searching places. Please report this to https://thetuhin.com/contact."
               : "No errors",
           data: errors,
         },
@@ -62,7 +65,7 @@ export default async function serach({ query }) {
   } catch (error) {
     return jsonResponse({
       data: {
-        message: error.message || error.toString(),
+        message: `Something went wrong => ${error.message || error.toString()}`,
       },
       status: 500,
     });
