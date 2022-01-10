@@ -24,6 +24,8 @@ export default async function serach({ query }) {
     var processedData = [],
       errors = [];
 
+    if (!data) throw new Error("No result found!");
+
     data.forEach((item) => {
       try {
         item = item[0];
@@ -65,9 +67,9 @@ export default async function serach({ query }) {
   } catch (error) {
     return jsonResponse({
       data: {
-        message: `Something went wrong => ${error.message || error.toString()}`,
+        message: error.message || error.toString(),
       },
-      status: 500,
+      status: error.toString().includes("No result found") ? 404 : 500, // I know I can take better approach
     });
   }
 }

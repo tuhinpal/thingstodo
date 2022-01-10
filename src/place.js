@@ -29,6 +29,7 @@ export default async function place({ id }) {
     } catch (_) {}
     delete data[0];
     data = data[1];
+    if (!data) throw new Error("Id is invalid!");
     data = data.pop();
     data = data[0];
 
@@ -93,11 +94,9 @@ export default async function place({ id }) {
   } catch (error) {
     return jsonResponse({
       data: {
-        message: `Something went wrong, Maybe ID is invalid => ${
-          error.message || error.toString()
-        }`,
+        message: error.message || error.toString(),
       },
-      status: 500,
+      status: error.toString().includes("Id is invalid") ? 404 : 500,
     });
   }
 }
