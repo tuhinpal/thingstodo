@@ -3,7 +3,7 @@ import createMapDeeplink from "../lib/createMapDeeplink";
 import jsonResponse from "../lib/jsonResponse";
 import processImage from "../lib/processImage";
 
-export default async function place({ id }) {
+export default async function place({ id, onlyReturn }) {
   try {
     const response = await fetch(
       "https://www.google.com/_/TravelFrontendUi/data/batchexecute",
@@ -81,16 +81,20 @@ export default async function place({ id }) {
       },
     };
 
-    try {
-      await setplaceCache(id, object);
-    } catch (_) {}
+    if (!onlyReturn) {
+      try {
+        await setplaceCache(id, object);
+      } catch (_) {}
 
-    return jsonResponse({
-      data: object,
-      headers: {
-        cache: "MISS",
-      },
-    });
+      return jsonResponse({
+        data: object,
+        headers: {
+          cache: "MISS",
+        },
+      });
+    } else {
+      return object;
+    }
   } catch (error) {
     return jsonResponse({
       data: {

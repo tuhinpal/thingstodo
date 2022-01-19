@@ -1,6 +1,6 @@
 import jsonResponse from "../lib/jsonResponse";
 
-export default async function search({ query }) {
+export default async function search({ query, onlyReturn }) {
   try {
     const response = await fetch(
       "https://www.google.com/_/TravelFrontendUi/data/batchexecute",
@@ -49,21 +49,25 @@ export default async function search({ query }) {
       }
     });
 
-    return jsonResponse({
-      data: {
-        message: "Place searched!",
-        query,
-        count: processedData.length,
-        data: processedData,
-        error: {
-          message:
-            errors.length > 0
-              ? "Some errors while searching places. Please report this to https://thetuhin.com/contact."
-              : "No errors",
-          data: errors,
+    if (!onlyReturn) {
+      return jsonResponse({
+        data: {
+          message: "Place searched!",
+          query,
+          count: processedData.length,
+          data: processedData,
+          error: {
+            message:
+              errors.length > 0
+                ? "Some errors while searching places. Please report this to https://thetuhin.com/contact."
+                : "No errors",
+            data: errors,
+          },
         },
-      },
-    });
+      });
+    } else {
+      return processedData;
+    }
   } catch (error) {
     return jsonResponse({
       data: {
